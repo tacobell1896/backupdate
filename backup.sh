@@ -1,14 +1,7 @@
 #!/bin/bash
-if [ ! -f "wp-config.php"]
-then
-    DBNAME=`cat configuration.php | $`
-    DBUSER=``
-    DBPASS=``
-else
     DBNAME=`cat wp-config.php | DB_NAME | cut -d \' -f 4`
     DBUSER=`cat wp-config.php | DB_USER | cut -d \' -f 4`
     DBPASS=`cat wp-config.php | DB_PASSWORD | cut -d \' -f 4`
-fi
 # TODO: conditional to check for what CMS is being used and pull credentials from the appropriate config file
 ## Should be the name of the directory that the site is in
 username=""
